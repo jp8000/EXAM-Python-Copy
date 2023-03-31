@@ -1,0 +1,95 @@
+
+
+
+READ txt files 'OpeningAccountsData.txt', 'UserInfo.txt'
+   
+
+1.
+WHILE
+   PROMPT user to enter used id <AccountOwnerID>
+   READ users input
+      IF user id matches 'AccountOwnerID' in 'UserInfo.txt 
+         proceed to next step
+      ELSE DISPLAY "Your ID number is incorrect, please try again!." 
+         return to the beginning of the loop
+
+2.
+   READ 'FirstName' and 'Surname' in 'UserInfo.txt'
+   DISPLAY 
+   "welcome " <FirstName + Surname> " ,Please select an optio: 1, 2, 3, or q"
+   DISPLAY<banking_options>
+   1 for Deposit
+   2 for Withdraw
+   3 for Balance
+   q for quit
+   
+3.
+   PROMPT user to select an option from <banking_options>
+      DISPLAY "Select from the menu: "
+
+      IF user input = 1 (Deposit)
+         DISPLAY "Which account do you wish to deposit into: "
+         <account_type, AccountNumber> matching <AccountOwnerID> from 'OpeningAccountData.txt'
+
+         PROMPT user to select an account from list DISPLAY "Select an account: "
+
+         PROMPT user to enter a deposit amount DISPLAY "Enter the amount you wish to deposit: "
+            IF deposit amount is not a number:
+               return to the beginning of the loop
+
+         current account balance + deposit amount = New Opening Balance
+         DISPLAY "Deposit successful! The new balance for account" + AccountNumber + New Opening Balance
+         WRITE new OpeningBalance to selected <account_type, AccountNumber> from 'OpeningAccountData.txt'
+         DISPLAY account summary
+         
+         ELSE DISPLAY "Wrong Input - Invalid account number selected."
+            return to the beginning of the loop
+
+
+
+      ELSE user input = 2 (Withdraw)
+         DISPLAY "Which account do you wish to withdraw from: "
+         <account_type, AccountNumber> matching <AccountOwnerID> from 'OpeningAccountData.txt'
+
+         PROMPT user to select an account from list DISPLAY "Select an account: "
+
+         PROMPT user to enter a Withdraw amount DISPLAY "Enter the amount you wish to withdraw: "
+
+         DISPLAY "You entered a valid Withdraw amount of:", (Withdraw amount)
+            IF Withdraw amount is not a AccountNumber
+               return to the beginning of the loop
+
+            IF Withdraw amount is greater then current account balance
+               return to the beginning of the loop
+
+         ELSE:current account balance - Withdraw amount = New Opening Balance
+               DISPLAY "The new balance for account" + AccountNumber + New Opening Balance
+               WRITE New OpeningBalance to selected <account_type, AccountNumber> from 'OpeningAccountData.txt'
+
+               DISPLAY account summary
+         
+         ELSE DISPLAY "Wrong Input - Invalid account number selected." RETURN to start of program
+
+
+
+      ELSE user input = 3 (Balance)
+         DISPLAY "Which account do you wish to check the balance of: "
+         <account_type, AccountNumber> matching <AccountOwnerID> from 'OpeningAccountData.txt'
+
+
+         PROMPT user to select an account from list DISPLAY "which account do you wish to check the balance of: "
+         DISPLAY"The opening balanmce of account" AccountType + AccountNumber + Opening Balance
+         
+         DISPLAY account summary
+         
+         ELSE DISPLAY "Wrong Input - Invalid account number selected." RETURN to start of program
+
+
+
+
+      ELSE user input = q (Quit)
+         DISPLAY (account_owner_id, account_type, account_number, opening_balance) from OpeningAccountData.txt
+
+
+
+
