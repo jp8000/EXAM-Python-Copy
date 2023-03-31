@@ -31,7 +31,12 @@ WHILE
          DISPLAY "Which account do you wish to deposit into: "
          <account_type, AccountNumber> matching <AccountOwnerID> from 'OpeningAccountData.txt'
 
-         PROMPT user to select an account from list DISPLAY "Select an account: "
+         PROMPT user to select an account from list DISPLAY "Select an account: "<selected account>
+
+         CHECK selected account is valid
+            IF <selected account> is valid continue
+               IF <selected account> not valid move to ELSE statement 
+               
 
          PROMPT user to enter a deposit amount DISPLAY "Enter the amount you wish to deposit: "
             IF deposit amount is not a number:
@@ -51,7 +56,11 @@ WHILE
          DISPLAY "Which account do you wish to withdraw from: "
          <account_type, AccountNumber> matching <AccountOwnerID> from 'OpeningAccountData.txt'
 
-         PROMPT user to select an account from list DISPLAY "Select an account: "
+         PROMPT user to select an account from list DISPLAY "Select an account: " <selected account>
+
+         CHECK selected account is valid
+         IF <selected account> is valid continue
+            IF <selected account> not valid move to ELSE statement 
 
          PROMPT user to enter a Withdraw amount DISPLAY "Enter the amount you wish to withdraw: "
 
@@ -75,6 +84,10 @@ WHILE
       ELSE user input = 3 (Balance)
          DISPLAY "Which account do you wish to check the balance of: "
          <account_type, AccountNumber> matching <AccountOwnerID> from 'OpeningAccountData.txt'
+
+         CHECK selected account is valid
+         IF <selected account> is valid continue
+            IF <selected account> not valid move to ELSE statement 
 
 
          PROMPT user to select an account from list DISPLAY "which account do you wish to check the balance of: "
