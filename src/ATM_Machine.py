@@ -49,8 +49,8 @@ def get_account_types_and_numbers(accounts, account_owner_id):  # function is us
 
 
 # Retrieve the user information from the file
-users = UserInfo.from_file("EXAM-Python/data/UserInfo.txt") #creates a list of UserInfo objects by calling the from_file class method of the UserInfo class.
-accounts = OpeningAccountData.from_file("EXAM-Python/data/OpeningAccountsData.txt") #creates a list of OpeningAccountData objects by calling the from_file class method of the OpeningAccountData class.
+users = UserInfo.from_file("data/UserInfo.txt") #creates a list of UserInfo objects by calling the from_file class method of the UserInfo class.
+accounts = OpeningAccountData.from_file("data/OpeningAccountsData.txt") #creates a list of OpeningAccountData objects by calling the from_file class method of the OpeningAccountData class.
 
 
 def update_balance_file(file_path, account_number, new_balance):
@@ -152,7 +152,7 @@ while True:
                             account.opening_balance = str(float(account.opening_balance))
 
                             # Update the .txt file with the new balance
-                            update_balance_file('EXAM-Python/data/OpeningAccountsData.txt', account.account_number, account.opening_balance)
+                            update_balance_file('data/OpeningAccountsData.txt', account.account_number, account.opening_balance)
                             # Prints selected account infomation 
                             print_account_summary(account_types_and_numbers, accounts)
         else:
@@ -197,7 +197,7 @@ while True:
                                 account.opening_balance = str(float(account.opening_balance))
 
                                 # Update the .txt file with the new balance
-                                update_balance_file('EXAM-Python/data/OpeningAccountsData.txt', account.account_number, account.opening_balance)
+                                update_balance_file('data/OpeningAccountsData.txt', account.account_number, account.opening_balance)
                                 # Prints selected account infomation 
                                 print_account_summary(account_types_and_numbers, accounts)
         else:
@@ -239,7 +239,7 @@ while True:
     
     elif user_choice == "q":
         #reads OpeningAccountData.txt and stores the data inide accounts
-        accounts = OpeningAccountData.from_file("EXAM-Python/data/OpeningAccountsData.txt")
+        accounts = OpeningAccountData.from_file("data/OpeningAccountsData.txt")
         # A for loop which iterates each 'account' inside 'accounts' and prints the results 
         # The last print statement is empty to provide a space between each account for better readability
         for account in accounts:
