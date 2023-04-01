@@ -77,7 +77,8 @@ def print_account_summary(account_types_and_numbers, accounts):
                 # print_account_summary(account_types_and_numbers, accounts)
 
 
-if __name__ == "__main__":  #  tells python 
+if __name__ == "__main__": 
+
     updates = [] # caputes the new balances but doesnt update
 
     while True:
@@ -265,4 +266,4 @@ if __name__ == "__main__":  #  tells python
 
         
     # User will now loop back to the start of the program as it's a while loop 
-    #       
+     
