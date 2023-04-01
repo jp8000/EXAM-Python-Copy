@@ -3,4 +3,4 @@ AccountOwnerID|||AccountNumber|||AccountType|||OpeningBalance
 001|||7814135|||Saving|||1000
 002|||9676422|||Saving|||1000
 002|||7524155|||Cheque|||2000.0
-003|||9042221|||Saving|||200.0
+003|||9042221|||Saving|||100.0
