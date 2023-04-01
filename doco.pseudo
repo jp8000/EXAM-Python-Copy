@@ -44,7 +44,8 @@ WHILE
 
          current account balance + deposit amount = New Opening Balance
          DISPLAY "Deposit successful! The new balance for account" + AccountNumber + New Opening Balance
-         WRITE new OpeningBalance to selected <account_type, AccountNumber> from 'OpeningAccountData.txt'
+         CAPTURE New Opening Balance
+
          DISPLAY account summary
          
          ELSE DISPLAY "Wrong Input - Invalid account number selected."
@@ -73,7 +74,7 @@ WHILE
 
          ELSE:current account balance - Withdraw amount = New Opening Balance
                DISPLAY "The new balance for account" + AccountNumber + New Opening Balance
-               WRITE New OpeningBalance to selected <account_type, AccountNumber> from 'OpeningAccountData.txt'
+               CAPTURE New Opening Balance
 
                DISPLAY account summary
          
@@ -101,6 +102,8 @@ WHILE
 
 
       ELSE user input = q (Quit)
+         UPDATE New Opening Balance to 'OpeningAccountData.txt'
+         
          DISPLAY (account_owner_id, account_type, account_number, opening_balance) from OpeningAccountData.txt
 
 

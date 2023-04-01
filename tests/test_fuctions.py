@@ -3,7 +3,7 @@
 # cd into the "tests" folder before running the pytest
 
 import os
-from ATM_Machine_for_testing import update_balance_file, print_account_summary, get_account_types_and_numbers, OpeningAccountData
+from src.ATM_Machine import update_balance_file, print_account_summary, get_account_types_and_numbers, OpeningAccountData
 
 
 def test_update_balance_file():
